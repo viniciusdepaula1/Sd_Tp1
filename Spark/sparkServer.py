@@ -10,7 +10,7 @@ def sendData(time, rdd):
     print("-------------------------------------------")
     line = rdd.collect()
     #print(line)
-    url = 'http://localhost:4444/update'
+    url = 'http://0.0.0.0:4444/update'
     response = requests.post(url, json={'chave': line})
     print(response)
 

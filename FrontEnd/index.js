@@ -4,6 +4,8 @@ const app = express();
 app.use(express.json());
 const router = express.Router();
 var chaves = []
+const PORT = process.env.PORT || 4444;
+const HOST = '0.0.0.0';
 
 app.use(
     router.get('/', (req, res) => {
@@ -19,7 +21,7 @@ app.use(
     })
 )
 
-app.set('PORT', 4444);
+app.set('PORT', PORT);
 
 const server = app.listen(app.get('PORT'), () => {
     console.log(`Server running on port ${app.get('PORT')}`)

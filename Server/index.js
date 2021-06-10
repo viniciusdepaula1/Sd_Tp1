@@ -8,12 +8,17 @@ const server = net.createServer(function (socket) {
   
     console.log('entrei')
 
-    while(true){
+    let count = 0;
+    while(count <= 1000){
       sort1 = jsonData.random() + " " 
         + jsonData.random() + " " + jsonData.random() + "\n"
     
       socket.write(sort1)
+      count += 1
     }    
+
+    socket.end()
+
 })
 
 server.on("error", (err) => {
